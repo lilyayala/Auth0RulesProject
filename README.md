@@ -1,4 +1,4 @@
-# Auth0RulesProject
+# A guide to create an Application that creates a list of Rules that apply to Auth0 Applications
 
 Here is a guide that I've created for you. By following these steps, you should be able to access or create an Application with your Auth0 account. If the login is successful, the webpage dynamically generates a list of the applications in your account and the rules which apply to each application. The solution is protected by Auth0 authentication, and only available to a selected whitelist of users.
 
