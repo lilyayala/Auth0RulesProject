@@ -56,13 +56,18 @@ In your Auth0 Application, go to settings and get the client ID, domain, client 
 
 ## Running the sample application
 
-Download or git clone this code to your localhost
+*Note: You should have Node.js installed in your computer*
+
+You can download the repository from Github or add it to your localhost from the command line or terminal:
+
 `git clone https://github.com/lilyayala/Auth0RulesProject.git`
 
 Go to the pathname file
+
 `cd Auth0RulesProjecT`
 
 Install the dependencies
+
 `npm install`
 
 
