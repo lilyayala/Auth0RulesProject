@@ -34,16 +34,16 @@ Create a Whitelist Rule with the following code:
 ```
 In your Auth0 Application, go to settings and get the client ID, domain, client secret, and callback URL. Go to the .env file in your application files to configure the environment variables, add client ID, domain, client secret, and callback URL for each of the applications you want to add to the list.
 
-`AUTH0_CLIENT_ID:` node.js client (ListOfRulesAndClients) 
-`AUTH0_DOMAIN:` your Auth0 tenant name 
-`AUTH0_CLIENT_SECRET:` node.js client secrets (ListOfRulesAndClients) 
-`AUTH0_CALLBACK_URL:` running locally http://localhost:3000/callback 
-`AUTH0_CLIENT_1_ID_API:` 
-`AUTH0_CLIENT_1_SECRET_API:`
-`AUTH0_CLIENT_2_ID_API:` 
-`AUTH0_CLIENT_2_SECRET_API:` 
-`AUTH0_CLIENT_3_ID_API:` 
-`AUTH0_CLIENT_3_SECRET_API:`
+* `AUTH0_CLIENT_ID:` node.js client (ListOfRulesAndClients) 
+* `AUTH0_DOMAIN:` your Auth0 tenant name 
+* `AUTH0_CLIENT_SECRET:` node.js client secrets (ListOfRulesAndClients) 
+* `AUTH0_CALLBACK_URL:` running locally http://localhost:3000/callback 
+* `AUTH0_CLIENT_1_ID_API:` 
+* `AUTH0_CLIENT_1_SECRET_API:`
+* `AUTH0_CLIENT_2_ID_API:` 
+* `AUTH0_CLIENT_2_SECRET_API:` 
+* `AUTH0_CLIENT_3_ID_API:` 
+* `AUTH0_CLIENT_3_SECRET_API:`
 
 Note: This is an example of how your .env variables should look. In this example, I assigned the number 1, 2, 3 as if they were different applications. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.
 
