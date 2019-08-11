@@ -1,4 +1,6 @@
-# Guide: Auth0 Application that geneartes a list of exisiting rules that apply to each Application (client)
+# Auth0 Application that geneartes a list of exisiting rules that apply to each Application (client)
+
+# Guide:
 
 Here is a guide that I've created for you. 
 
