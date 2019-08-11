@@ -70,6 +70,10 @@ Install the dependencies:
 
 `npm install`
 
+Change environment variables and run the Application:
+
+'npm start`
+
 
 ## PART 3: Add List Algorithm to your Application
 
