@@ -64,6 +64,20 @@ var tokenRequestOptions = {
     json: true
 };
 
+//Another client
+var tokenRequestOptions = {
+    method: 'POST',
+    uri: 'https://' + process.env.AUTH0_DOMAIN + '/oauth/token',
+    header: 'content-type: application/json',
+    body: {
+        client_id: process.env.MANAGEMENT_API1_CLIENT_ID,
+        client_secret: process.env.MANAGEMENT_API1_CLIENT_SECRET,
+        audience: 'https://' + process.env.AUTH0_DOMAIN + '/api/v2/',
+        grant_type: 'client_credentials'
+    },
+    json: true
+};
+
 
 var getRequestOptions = function(resource, accessToken) {
     return {
@@ -74,6 +88,7 @@ var getRequestOptions = function(resource, accessToken) {
         json: true
     };
 };
+
 
 
 router.get('/', ensureLoggedIn, function(req, res, next) {
