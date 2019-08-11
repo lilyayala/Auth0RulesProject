@@ -1,0 +1,39 @@
+body, html {
+	height: 100%;
+	font-family: Poppins-Regular, sans-serif;
+}
+
+a {
+    color: #008080;
+}
+
+li {
+    list-style: none;
+}
+
+.client {
+    background-color: #7B68EE;
+    border-radius: 5px;
+    height: 20px;
+    margin: 2px;
+    padding: 10px;
+}
+
+.rule {
+    background-color: lightblue;
+    border-radius: 5px;
+    height: 20px;
+    margin: 2px 2px 2px 30px;
+    padding: 10px;
+}
+
+.login {
+    background-color: rgb(112, 139, 228);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+ 

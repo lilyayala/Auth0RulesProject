@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 List of Applications with applicable Rules
+  ul
+    each val in rulesPerClient
+      li
+        div(class='client')=val.client.name
+        each rule in val.rules
+          div(class='rule')=rule
+  br
+  a(href='/logout') Logout
