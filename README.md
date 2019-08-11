@@ -35,7 +35,6 @@ Create a Whitelist Rule or add this JS code if the rule already exists:
 
 ``` javascript
     if (context.clientName === 'ListOfRulesAndClients') {
->>>>>>> 60004a0d230c3ebfce76a01860bcc9011c5328a6
       var whitelist = [ 'youremail@example.com' ]; //authorized users
       var userHasAccess = whitelist.some(
         function (email) {
