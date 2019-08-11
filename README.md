@@ -50,8 +50,6 @@ In your Auth0 Application, go to settings and get the client ID, domain, client 
 
 *Note: This is an example of how your .env variables should look. In this example, I assigned the number 1, 2, 3 as if they were different applications. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.*
 
-This section is very technical so you can skip it; however, if you want to add it to your application instead of the one provided, you can find the steps in here.
-
 ## Running the sample application
 
 Download or git clone this code to your localhost
@@ -65,6 +63,8 @@ Install the dependencies
 
 
 ## PART 3: Add List Algorithm to your Application
+
+**This section is very technical so you can skip it; however, if you want to add it to your application instead of the one provided, you can find the steps in here.**
 
 This application code uses Auth0 lock to authenticate the user. The Whitelists rule makes sure that only authorized users have access to this application. If a user that is not authorized tries to log in, the page redirects to a Not Authorized page that shows an error message to the user. Otherwise, the user gets access to the list of clients and all rules that apply to each application.
 
