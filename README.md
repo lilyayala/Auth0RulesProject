@@ -6,11 +6,16 @@ Here is a guide that I've created for you.
 
 By following these steps, you should be able to access or create an Application with your Auth0 account. If the login is successful, the webpage dynamically generates a list of the applications in your account and the rules which apply to each application. The solution is protected by Auth0 authentication, and only available to a selected whitelist of users.
 
+
 **How to get started:**
 
-1. Create a brand new Auth0 application and start this guide from part 1
+*Tips:*
+* Have an Auth0 Account.
+* Have a GitHub account.
+
+*NOTE: follow the steps bellow depending on your needs.*
+1. Create a brand new Auth0 application and start this guide from part 1. (*NOTE: Skip part 3 from this guide if startting here*)
 1. Download [(https://github.com/lilyayala/Auth0RulesProject)] application and start the guide from part 2 (Skip part3)
-*NOTE: You'll need a Github account*
 1. Add the functions to create the list of rules per application to an existing application (follow part 2 and 3)
 
 ## PART 1: Create an Application
@@ -86,10 +91,10 @@ Install the dependencies:
 
 This application code uses Auth0 lock to authenticate the user. The Whitelists rule makes sure that only authorized users have access to this application. If a user that is not authorized tries to log in, the page redirects to a Not Authorized page that shows an error message to the user. Otherwise, the user gets access to the list of clients and all rules that apply to each application.
 
-*NOTE: These steps focus on the functions that make the list work so that the user can see the list of rules that apply to each application. For more advanced development, please visit the [Auth0 Management API V2](https://auth0.com/docs/api/management/v2).
+*NOTE: These steps focus on the functions that make the list work so that the user can see the list of rules that apply to each application. For more advanced development, please visit the [Auth0 Management API V2](https://auth0.com/docs/api/management/v2).*
 
 
-Add this code to your main file, for example, app.js:*
+Add this code to your main file, for example, app.js:
 
 ``` node.js
 
