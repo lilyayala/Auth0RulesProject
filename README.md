@@ -54,12 +54,12 @@ This section is very technical so you can skip it; however, if you want to add i
 
 ## Running the sample application
 
-`Download or git clone this code to your localhost
+```Download or git clone this code to your localhost
 git clone https://github.com/lilyayala/Auth0RulesProject.git
-cd Auth0RulesProject`
+cd Auth0RulesProject```
 
-`Install the dependencies.
-npm install`
+```Install the dependencies
+npm install```
 
 ## PART 3: Add List Algorithm to your Application
 
