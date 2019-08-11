@@ -1,4 +1,4 @@
-# A guide to create an Application that creates a list of Rules that apply to Auth0 Applications
+# Guide: Auth0 Application that geneartes a list of exisiting rules that apply to each Application (client)
 
 Here is a guide that I've created for you. 
 
