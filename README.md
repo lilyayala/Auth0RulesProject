@@ -72,7 +72,7 @@ Install the dependencies:
 
 Change environment variables and run the Application:
 
-'npm start`
+`npm start`
 
 
 ## PART 3: Add List Algorithm to your Application
