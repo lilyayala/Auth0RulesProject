@@ -1,19 +1,22 @@
-# Auth0RulesProject
+## Auth0RulesProject
 
 Here is a guide that I've created for you. By following these steps, you should be able to access or create an Application with your Auth0 account. If the login is successful, the webpage dynamically generates a list of the applications in your account and the rules which apply to each application. The solution is protected by Auth0 authentication, and only available to a selected whitelist of users.
 
 You have a few options to get started:
 
 Create a brand new Auth0 application and start the guide from part 1
-Download [This (https://github.com/lilyayala/Auth0RulesPerApp)] application and start the guide from part 2 (Skip part 1 & 3 NOTE: You'll need a Github account)
+Download [This (https://github.com/lilyayala/Auth0RulesProject)] application and start the guide from part 2 (Skip part 1 & 3 NOTE: You'll need a Github account)
 Add the functions to create the list of rules per application to an existing application (follow part 2 and 3)
-PART 1: Create an Application
+
+#PART 1: Create an Application
 
 NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.
 
-After login to your Auth0 Account Dashboard, go to Applications section on the left menu and click create a new Application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. Once you've created the app, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL. Create a Whitelist Rule with the following code:
+After login to your Auth0 Account Dashboard, go to Applications section on the left menu and click create a new Application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. Once you've created the app, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL. 
 
-part 2: Auth0 configuration Create a Whitelist for a specific App or add to rule if already exists and add this JS code:
+#part 2: Auth0 configuration Create a Whitelist for a specific App or add to rule if already exists and add this JS code:
+Create a Whitelist Rule with the following code:
+
 ``` javascript
     if (context.clientName === 'ListAppRulesUsingMngmtApiV2') {
       var whitelist = [ 'youremail@example.com' ]; //authorized users
@@ -31,11 +34,22 @@ part 2: Auth0 configuration Create a Whitelist for a specific App or add to rule
 ```
 In your Auth0 Application, go to settings and get the client ID, domain, client secret, and callback URL. Go to the .env file in your application files to configure the environment variables, add client ID, domain, client secret, and callback URL for each of the applications you want to add to the list.
 
-AUTH0_CLIENT_ID: node.js client (ListOfRulesAndClients) AUTH0_DOMAIN: your Auth0 tenant name AUTH0_CLIENT_SECRET: node.js client secrets (ListOfRulesAndClients) AUTH0_CALLBACK_URL: running locally http://localhost:3000/callback AUTH0_CLIENT_1_ID_API: AUTH0_CLIENT_1_SECRET_API: AUTH0_CLIENT_2_ID_API: AUTH0_CLIENT_2_SECRET_API: AUTH0_CLIENT_3_ID_API: AUTH0_CLIENT_3_SECRET_API: Note: This is an example of how your .env variables should look. In this example, I assigned the number 1, 2, 3 as if they were different applications. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.
+`AUTH0_CLIENT_ID:` node.js client (ListOfRulesAndClients) 
+`AUTH0_DOMAIN:` your Auth0 tenant name 
+`AUTH0_CLIENT_SECRET:` node.js client secrets (ListOfRulesAndClients) 
+`AUTH0_CALLBACK_URL:` running locally http://localhost:3000/callback 
+`AUTH0_CLIENT_1_ID_API:` 
+`AUTH0_CLIENT_1_SECRET_API:`
+`AUTH0_CLIENT_2_ID_API:` 
+`AUTH0_CLIENT_2_SECRET_API:` 
+`AUTH0_CLIENT_3_ID_API:` 
+`AUTH0_CLIENT_3_SECRET_API:`
+
+Note: This is an example of how your .env variables should look. In this example, I assigned the number 1, 2, 3 as if they were different applications. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.
 
 This section is very technical so you can skip it; however, if you want to add it to your application instead of the one provided, you can find the steps in here.
 
-PART 3: Add List Algorithm to your Application
+#PART 3: Add List Algorithm to your Application
 
 This application code uses Auth0 lock to authenticate the user. The Whitelists rule makes sure that only authorized users have access to this application. If a user that is not authorized tries to log in, the page redirects to a Not Authorized page that shows an error message to the user. Otherwise, the user gets access to the list of clients and all rules that apply to each application.
 
