@@ -1,11 +1,14 @@
 # A guide to create an Application that creates a list of Rules that apply to Auth0 Applications
 
-Here is a guide that I've created for you. By following these steps, you should be able to access or create an Application with your Auth0 account. If the login is successful, the webpage dynamically generates a list of the applications in your account and the rules which apply to each application. The solution is protected by Auth0 authentication, and only available to a selected whitelist of users.
+Here is a guide that I've created for you. 
+
+By following these steps, you should be able to access or create an Application with your Auth0 account. If the login is successful, the webpage dynamically generates a list of the applications in your account and the rules which apply to each application. The solution is protected by Auth0 authentication, and only available to a selected whitelist of users.
 
 You have a few options to get started:
 
-1. Create a brand new Auth0 application and start the guide from part 1
-1. Download [This (https://github.com/lilyayala/Auth0RulesProject)] application and start the guide from part 2 (Skip part 1 & 3 NOTE: You'll need a Github account)
+1. Create a brand new Auth0 application and start this guide from part 1
+1. Download [(https://github.com/lilyayala/Auth0RulesProject)] application and start the guide from part 2 (Skip part3)
+NOTE: You'll need a Github account
 1. Add the functions to create the list of rules per application to an existing application (follow part 2 and 3)
 
 ## PART 1: Create an Application
@@ -18,7 +21,7 @@ After login to your Auth0 Account Dashboard, go to Applications section on the l
 Create a Whitelist Rule with the following code:
 
 ``` javascript
-    if (context.clientName === 'ListAppRulesUsingMngmtApiV2') {
+    if (context.clientName === 'ListOfRulesAndClients') {
       var whitelist = [ 'youremail@example.com' ]; //authorized users
       var userHasAccess = whitelist.some(
         function (email) {
@@ -34,20 +37,29 @@ Create a Whitelist Rule with the following code:
 ```
 In your Auth0 Application, go to settings and get the client ID, domain, client secret, and callback URL. Go to the .env file in your application files to configure the environment variables, add client ID, domain, client secret, and callback URL for each of the applications you want to add to the list.
 
-* `AUTH0_CLIENT_ID:` node.js client (ListOfRulesAndClients) 
-* `AUTH0_DOMAIN:` your Auth0 tenant name 
-* `AUTH0_CLIENT_SECRET:` node.js client secrets (ListOfRulesAndClients) 
-* `AUTH0_CALLBACK_URL:` running locally http://localhost:3000/callback 
-* `AUTH0_CLIENT_1_ID_API:` 
-* `AUTH0_CLIENT_1_SECRET_API:`
-* `AUTH0_CLIENT_2_ID_API:` 
-* `AUTH0_CLIENT_2_SECRET_API:` 
-* `AUTH0_CLIENT_3_ID_API:` 
-* `AUTH0_CLIENT_3_SECRET_API:`
+* `AUTH0_CLIENT_ID=` node.js client (ListOfRulesAndClients) 
+* `AUTH0_DOMAIN=` your Auth0 tenant name 
+* `AUTH0_CLIENT_SECRET=` node.js client secrets (ListOfRulesAndClients) 
+* `AUTH0_CALLBACK_URL=` running locally http://localhost:3000/callback 
+* `AUTH0_CLIENT_1_ID_API=` "client 1 ID"
+* `AUTH0_CLIENT_1_SECRET_API=`"client 1 Secret"
+* `AUTH0_CLIENT_2_ID_API=` "Client 2 ID"
+* `AUTH0_CLIENT_2_SECRET_API=` "Client 2 Secret"
+* `AUTH0_CLIENT_3_ID_API=` "Client 3 ID"
+* `AUTH0_CLIENT_3_SECRET_API=` "Client 3 secret"
 
 Note: This is an example of how your .env variables should look. In this example, I assigned the number 1, 2, 3 as if they were different applications. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.
 
 This section is very technical so you can skip it; however, if you want to add it to your application instead of the one provided, you can find the steps in here.
+
+## Running the sample application
+
+'Download or git clone this code to your localhost
+git clone https://github.com/lilyayala/Auth0RulesProject.git
+cd Auth0RulesProject'
+
+'Install the dependencies.
+npm install'
 
 ## PART 3: Add List Algorithm to your Application
 
@@ -288,5 +300,7 @@ res.render('applist', {rulesPerClient: rulesPerClient});
 
 module.exports = router;
 ```
+
+
 
 If you have any questions about this guide, please contact Auth0 support.
