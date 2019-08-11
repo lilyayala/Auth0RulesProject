@@ -17,7 +17,7 @@ By following these steps, you should be able to access or create an Application 
 
 *NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.*
 
-After login to your Auth0 Account Dashboard, go to Applications section on the left menu and click create a new Application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. Once you've created the app, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL. 
+After login to your Auth0 Account Dashboard [https://manage.auth0.com/dashboard/], go to Applications section on the left menu and click create a new Application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. Once you've created the app, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL. 
 
 ## PART 2: Auth0 configuration 
 
