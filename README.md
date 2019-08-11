@@ -52,7 +52,9 @@ In your Auth0 Application, go to settings and get the client ID, domain, client 
 
 * `AUTH0_CLIENT_ID=`node.js client (ListOfRulesAndClients) 
 * `AUTH0_DOMAIN=`your Auth0 tenant name 
-* `AUTH0_CLIENT_SECRET=`node.js client secrets (ListOfRulesAndClients) 
+* `AUTH0_CLIENT_SECRET=`node.js client secrets (ListOfRulesAndClients)
+* `MANAGEMENT_API_CLIENT_ID=`client explorer API ID
+* `MANAGEMENT_API_CLIENT_SECRET=`client explorer API secret
 * `AUTH0_CALLBACK_URL=`running locally http://localhost:3000/callback 
 
 *Note: This is an example of how your .env variables should look. In this example, I'm using two applications, a regular web application and a non interactive. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.*
