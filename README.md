@@ -14,7 +14,7 @@ NOTE: for this solution, I've used Node js. However, any other technology can be
 After login to your Auth0 Account Dashboard, go to Applications section on the left menu and click create a new Application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. Once you've created the app, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL. Create a Whitelist Rule with the following code:
 
 part 2: Auth0 configuration Create a Whitelist for a specific App or add to rule if already exists and add this JS code:
-
+``` javascript
     if (context.clientName === 'ListAppRulesUsingMngmtApiV2') {
       var whitelist = [ 'youremail@example.com' ]; //authorized users
       var userHasAccess = whitelist.some(
@@ -28,6 +28,7 @@ part 2: Auth0 configuration Create a Whitelist for a specific App or add to rule
     }
     callback(null, user, context);
 }
+```
 In your Auth0 Application, go to settings and get the client ID, domain, client secret, and callback URL. Go to the .env file in your application files to configure the environment variables, add client ID, domain, client secret, and callback URL for each of the applications you want to add to the list.
 
 AUTH0_CLIENT_ID: node.js client (ListOfRulesAndClients) AUTH0_DOMAIN: your Auth0 tenant name AUTH0_CLIENT_SECRET: node.js client secrets (ListOfRulesAndClients) AUTH0_CALLBACK_URL: running locally http://localhost:3000/callback AUTH0_CLIENT_1_ID_API: AUTH0_CLIENT_1_SECRET_API: AUTH0_CLIENT_2_ID_API: AUTH0_CLIENT_2_SECRET_API: AUTH0_CLIENT_3_ID_API: AUTH0_CLIENT_3_SECRET_API: Note: This is an example of how your .env variables should look. In this example, I assigned the number 1, 2, 3 as if they were different applications. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.
@@ -39,6 +40,8 @@ PART 3: Add List Algorithm to your Application
 This application code uses Auth0 lock to authenticate the user. The Whitelists rule makes sure that only authorized users have access to this application. If a user that is not authorized tries to log in, the page redirects to a Not Authorized page that shows an error message to the user. Otherwise, the user gets access to the list of clients and all rules that apply to each application.
 
 NOTE: These steps focus on the functions that make the list work so that the user can see the list of rules that apply to each application. For more advanced development, please visit the Auth0 Management API. Add this code to your main file, for example, app.js:
+
+``` node.js
 
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -217,12 +220,9 @@ var getRequestOptions = function(resource, accessToken) {
         json: true
     };
 };
-
-
-router.get('/', ensureLoggedIn, function(req, res, next) {
-
 ```
-
+``` node.js
+router.get('/', ensureLoggedIn, function(req, res, next) {
     // get access token to query Management API
     request(tokenRequestOptions)
         .then(function(body) {
@@ -274,11 +274,8 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
 
 
 });
-```
-
-
 
 module.exports = router;
-
+```
 
 If you have any questions about this guide, please contact Auth0 support.
