@@ -4,9 +4,9 @@ Here is a guide that I've created for you. By following these steps, you should 
 
 You have a few options to get started:
 
-Create a brand new Auth0 application and start the guide from part 1
-Download [This (https://github.com/lilyayala/Auth0RulesProject)] application and start the guide from part 2 (Skip part 1 & 3 NOTE: You'll need a Github account)
-Add the functions to create the list of rules per application to an existing application (follow part 2 and 3)
+1. Create a brand new Auth0 application and start the guide from part 1
+1. Download [This (https://github.com/lilyayala/Auth0RulesProject)] application and start the guide from part 2 (Skip part 1 & 3 NOTE: You'll need a Github account)
+1. Add the functions to create the list of rules per application to an existing application (follow part 2 and 3)
 
 ## PART 1: Create an Application
 
