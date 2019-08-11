@@ -89,14 +89,8 @@ NOTE: These steps focus on the functions that make the list work so that the use
 * `AUTH0_DOMAIN=` your Auth0 tenant name 
 * `AUTH0_CLIENT_SECRET=` node.js client secrets (ListOfRulesAndClients) 
 * `AUTH0_CALLBACK_URL=` running locally http://localhost:3000/callback 
-* `AUTH0_CLIENT_1_ID_API=` "client 1 ID"
-* `AUTH0_CLIENT_1_SECRET_API=`"client 1 Secret"
-* `AUTH0_CLIENT_2_ID_API=` "Client 2 ID"
-* `AUTH0_CLIENT_2_SECRET_API=` "Client 2 Secret"
-* `AUTH0_CLIENT_3_ID_API=` "Client 3 ID"
-* `AUTH0_CLIENT_3_SECRET_API=` "Client 3 secret"
 
-*Note: This is an example of how your .env variables should look. In this example, I assigned the number 1, 2, 3 as if they were different applications. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.*
+*Note: This is an example of how your .env variables should look. In this example, I'm only checking two applications. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.*
 
 ## Running the sample application
 
