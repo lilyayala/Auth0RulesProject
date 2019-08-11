@@ -243,50 +243,47 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
             var accessToken = body.access_token;
             var rulesPerClient = [];
 
-            // get all rules
-            request(getRequestOptions('rules', accessToken))
-                .then(function(rules) {
+  // get all rules
+   request(getRequestOptions('rules', accessToken))
+   .then(function(rules) {
 
-                    // get all clients
-                    request(getRequestOptions('clients', accessToken))
-                        .then(function(clients) {
+  // get all clients
+   request(getRequestOptions('clients', accessToken))
+   .then(function(clients) {
 
-                            // create empty array of rules per client
-                            clients.forEach(function(client) {
-                                if (client.name !== 'All Applications') {
-                                    rulesPerClient.push({
-                                        client: client,
-                                        rules: []
-                                    });
-                                }
-                            });
+  // create empty array of rules per client
+     clients.forEach(function(client) {
+     if (client.name !== 'All Applications') {
+         rulesPerClient.push({
+          client: client,
+            rules: []
+        });
+    }
+});
 
 
-                            rules.forEach(function(rule) {
-                                console.log(rule);
-                                // check for client name on which the rule is applicable
-                                addRuleToClientIfRuleAppliesToClientName(rule, rulesPerClient);
+rules.forEach(function(rule) {
+console.log(rule);
+// check for client name on which the rule is applicable
+addRuleToClientIfRuleAppliesToClientName(rule, rulesPerClient);
                                 
 
-                                // check for client name on which the rule is NOT applicable
-                                addRuleToOtherClientsIfRuleDoesNotApplyToClientName(rule, rulesPerClient);
+// check for client name on which the rule is NOT applicable
+addRuleToOtherClientsIfRuleDoesNotApplyToClientName(rule, rulesPerClient);
 
-                                // check for client ID on which the rule is applicable
-                                addRuleToClientIfRuleAppliesToClientID(rule, rulesPerClient);
+// check for client ID on which the rule is applicable
+addRuleToClientIfRuleAppliesToClientID(rule, rulesPerClient);
 
-                                // check for client ID on which the rule is NOT applicable
-                                addRuleToOtherClientsIfRuleDoesNotApplyToClientID(rule, rulesPerClient);
+// check for client ID on which the rule is NOT applicable
+addRuleToOtherClientsIfRuleDoesNotApplyToClientID(rule, rulesPerClient);
 
-                            });
-                            console.log(rulesPerClient);
-                            res.render('applist', {rulesPerClient: rulesPerClient});
+      });
+ console.log(rulesPerClient);
+res.render('applist', {rulesPerClient: rulesPerClient});
 
-                        });
-                });
-
-        });
-
-
+               });
+           });
+     });
 });
 
 module.exports = router;
