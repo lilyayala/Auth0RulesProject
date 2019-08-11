@@ -17,7 +17,10 @@ By following these steps, you should be able to access or create an Application 
 
 *NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.*
 
-After login to your Auth0 Account Dashboard [https://manage.auth0.com/dashboard/], go to Applications section on the left menu and click create a new Application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. Once you've created the app, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL. 
+1. After login to your Auth0 Account Dashboard [https://manage.auth0.com/dashboard/], go to Applications section on the left menu and click create a new Application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. 
+1. Once you've created the app, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL.
+1. Create a Non Interactive Client API Explorer Client. We will need this client to make calls to the Management API from our application code.
+
 
 ## PART 2: Auth0 configuration 
 
@@ -39,7 +42,10 @@ Create a Whitelist Rule or add this JS code if the rule already exists:
     callback(null, user, context);
 }
 ```
-In your Auth0 Application, go to settings and get the client ID, domain, client secret, and callback URL. Go to the .env file in your application files to configure the environment variables, add client ID, domain, client secret, and callback URL for each of the applications you want to add to the list.
+1. In your Auth0 Application, go to settings and get the client ID, domain, client secret, and callback URL. 
+1. Go to the .env file in your application files to configure the environment variables, add client ID, domain, client secret, and callback URL for each of the applications you want to add to the list.
+1. Copy configuration and replace with your own and change environment variables like the example bellow:
+`cp .env.example .env`
 
 * `AUTH0_CLIENT_ID=` node.js client (ListOfRulesAndClients) 
 * `AUTH0_DOMAIN=` your Auth0 tenant name 
@@ -70,8 +76,7 @@ Install the dependencies:
 
 `npm install`
 
-Change environment variables and run the Application:
-
+ Run the Application:
 `npm start`
 
 
