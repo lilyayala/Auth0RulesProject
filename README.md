@@ -335,6 +335,6 @@ module.exports = router;
 
 
 
-If you have any questions about this guide, please contact Auth0 support.
+**If you have any questions about this guide, please contact Auth0 support**
 
-![list](https://github.com/lilyayala/Auth0RulesProject/blob/master/Docs/list.png?raw=true)
+![list](https://github.com/lilyayala/Auth0RulesProject/blob/master/Docs/list3.PNG?raw=true)
