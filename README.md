@@ -14,8 +14,6 @@ By following these steps, you should be able to access or create an Application 
 * Have an Auth0 Account.
 * Have a GitHub account.
 
-*NOTE: If you already have an application, you can skip steps 1 & 2 and add the code from part 3 to your code.*
-
 1. Create a new Auth0 application.(*NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.*)
 1. Download [(https://github.com/lilyayala/Auth0RulesProject)]
 
