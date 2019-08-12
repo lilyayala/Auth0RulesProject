@@ -14,18 +14,14 @@ By following these steps, you should be able to access or create an Application 
 * Have an Auth0 Account.
 * Have a GitHub account.
 
-*NOTE: follow the steps bellow depending on your needs.*
-1. Create a brand new Auth0 application and start this guide from part 1. (*NOTE: Skip part 3 from this guide if startting here*)
-1. Download [(https://github.com/lilyayala/Auth0RulesProject)] application and start the guide from part 2 (Skip part3)
-1. Add the functions to create the list of rules per application to an existing application (follow part 2 and 3)
+1. Create a new Auth0 application.(*NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.*)
+1. Download [(https://github.com/lilyayala/Auth0RulesProject)]
 
 ## PART 1: Create an Application
 
-*NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.*
-
-1. After login to your Auth0 Account Dashboard [https://manage.auth0.com/dashboard/], go to Applications section on the left menu and click create a new Application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. 
-1. Once you've created the app, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL.
-1. Create a Non Interactive Client API Explorer Client. We will need this client to make calls to the Management API from our application code.
+1. After login to your Auth0 Account Dashboard [https://manage.auth0.com/dashboard/], go to Applications section on the left menu and click create a new application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. 
+1. Once you've created the application, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL.
+1. Create a Non Interactive application API Explorer Client. We will need this client to make calls to the Management API from our application code.
 
 
 ## PART 2: Auth0 configuration 
@@ -59,27 +55,6 @@ In your Auth0 Application, go to settings and get the client ID, domain, client 
 
 *Note: This is an example of how your .env variables should look. In this example, I'm using two applications, a regular web application and a non interactive. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.*
 
-**This section is very technical so you can skip it; however, if you want to add it to your application instead of the one provided, you can find the steps in here.**
-
-## PART 3: Add List Algorithm to your Application
-
-This application code uses Auth0 lock to authenticate the user. The Whitelists rule makes sure that only authorized users have access to this application. If a user that is not authorized tries to log in, the page redirects to a Not Authorized page that shows an error message to the user. Otherwise, the user gets access to the list of clients and all rules that apply to each application.
-
-*NOTE: These steps focus on the functions that make the list work so that the user can see the list of rules that apply to each application. For more advanced development, please visit the Auth0 Management API.*
-
-Add this code to your main file, for example, app.js:
-
-1. In your Auth0 Application, go to settings and get the client ID, domain, client secret, and callback URL. 
-1. Go to the .env file in your application files to configure the environment variables, add client ID, domain, client secret, and callback URL for each of the applications you want to add to the list.
-1. Copy configuration and replace with your own and change environment variables like the example bellow:
-`cp .env.example .env`
-
-* `AUTH0_CLIENT_ID=` node.js client (ListOfRulesAndClients) 
-* `AUTH0_DOMAIN=` your Auth0 tenant name 
-* `AUTH0_CLIENT_SECRET=` node.js client secrets (ListOfRulesAndClients) 
-* `AUTH0_CALLBACK_URL=` running locally http://localhost:3000/callback 
-
-*Note: This is an example of how your .env variables should look. In this example, I'm only checking two applications. Also note that for this example I've been using localhost:3000, however you can deploy your application with any other service provider that you might be using.*
 
 ## Running the sample application
 
