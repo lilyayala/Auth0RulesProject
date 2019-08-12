@@ -32,7 +32,7 @@ Create a Whitelist Rule or add this JS code if the rule already exists:
 
 
 ``` javascript
-    if (context.clientName === 'ListOfRulesAndClients') {
+    if (context.clientName === 'ListOfRulesApplication') {
       var whitelist = [ 'youremail@example.com' ]; //authorized users
       var userHasAccess = whitelist.some(
         function (email) {
