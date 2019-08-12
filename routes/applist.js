@@ -17,6 +17,8 @@ var addRuleToClientIfRuleAppliesToClientName = function(rule, rulesPerClient) {
     }
 };
 
+/* To test different rule values */
+
 var addRuleToOtherClientsIfRuleDoesNotApplyToClientName = function(rule, rulesPerClient) {
     var matchedClientDisallowed = rule.script.match(/if\s*\(context\.clientName !== \'([^\']+)\'\)/);
     if (matchedClientDisallowed) {
@@ -109,7 +111,7 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
 
                             // create empty array of rules per client
                             clients.forEach(function(client) {
-                                if (client.name !== 'All Applications') {
+                                if (client.name !== 'API Explorer Client') {
                                     rulesPerClient.push({
                                         client: client,
                                         rules: []
