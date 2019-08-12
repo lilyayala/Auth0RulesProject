@@ -1,6 +1,7 @@
 
 # Auth0 Application that geneartes a list of exisiting rules that apply to each Application (client)
-![list](https://github.com/lilyayala/Auth0RulesProject/blob/master/Docs/list.png?raw=true)
+![login page](https://github.com/lilyayala/Auth0RulesProject/blob/master/Docs/loginphoto.PNG?raw=true)
+
 
 # Guide:
 
@@ -335,3 +336,5 @@ module.exports = router;
 
 
 If you have any questions about this guide, please contact Auth0 support.
+
+![list](https://github.com/lilyayala/Auth0RulesProject/blob/master/Docs/list.png?raw=true)
