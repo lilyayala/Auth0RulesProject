@@ -1,5 +1,6 @@
 
 # Auth0 Application that geneartes a list of exisiting rules that apply to each Application (client)
+[App login](/Docs/list.png)
 
 # Guide:
 
