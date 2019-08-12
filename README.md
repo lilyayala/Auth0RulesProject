@@ -14,18 +14,16 @@ By following these steps, you should be able to access or create an Application 
 * Have an Auth0 Account.
 * Have a GitHub account.
 
-*NOTE: follow the steps bellow depending on your needs.*
-1. Create a brand new Auth0 application and start this guide from part 1. (*NOTE: Skip part 3 from this guide if startting here*)
-1. Download [(https://github.com/lilyayala/Auth0RulesProject)] application and start the guide from part 2 (Skip part3)
-1. Add the functions to create the list of rules per application to an existing application (follow part 2 and 3)
+*NOTE: If you already have an application, you can skip steps 1 & 2 and add the code from part 3 to your code.*
+
+1. Create a new Auth0 application.(*NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.*)
+1. Download [(https://github.com/lilyayala/Auth0RulesProject)]
 
 ## PART 1: Create an Application
 
-*NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.*
-
-1. After login to your Auth0 Account Dashboard [https://manage.auth0.com/dashboard/], go to Applications section on the left menu and click create a new Application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. 
-1. Once you've created the app, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL.
-1. Create a Non Interactive Client API Explorer Client. We will need this client to make calls to the Management API from our application code.
+1. After login to your Auth0 Account Dashboard [https://manage.auth0.com/dashboard/], go to Applications section on the left menu and click create a new application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. 
+1. Once you've created the application, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL.
+1. Create a Non Interactive application API Explorer Client. We will need this client to make calls to the Management API from our application code.
 
 
 ## PART 2: Auth0 configuration 
