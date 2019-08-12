@@ -20,7 +20,6 @@ var strategy = new Auth0Strategy({
     clientID:     process.env.AUTH0_CLIENT_ID,
     clientSecret: process.env.AUTH0_CLIENT_SECRET,
     callbackURL:  process.env.AUTH0_CALLBACK_URL || 'http://localhost:3000/callback'
-    
   }, function(accessToken, refreshToken, extraParams, profile, done) {
     // accessToken is the token to call Auth0 API (not needed in the most cases)
     // extraParams.id_token has the JSON Web Token
@@ -44,13 +43,6 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
-//Home route
-app.get('/', function(req, res){
-  res.render('index', {
-    title:'Rules per Applications'
-  });
-});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

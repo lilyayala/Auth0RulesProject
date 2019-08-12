@@ -17,8 +17,6 @@ var addRuleToClientIfRuleAppliesToClientName = function(rule, rulesPerClient) {
     }
 };
 
-/* To test different rule values */
-
 var addRuleToOtherClientsIfRuleDoesNotApplyToClientName = function(rule, rulesPerClient) {
     var matchedClientDisallowed = rule.script.match(/if\s*\(context\.clientName !== \'([^\']+)\'\)/);
     if (matchedClientDisallowed) {
@@ -66,20 +64,6 @@ var tokenRequestOptions = {
     json: true
 };
 
-//Another client
-var tokenRequestOptions = {
-    method: 'POST',
-    uri: 'https://' + process.env.AUTH0_DOMAIN + '/oauth/token',
-    header: 'content-type: application/json',
-    body: {
-        client_id: process.env.MANAGEMENT_API1_CLIENT_ID,
-        client_secret: process.env.MANAGEMENT_API1_CLIENT_SECRET,
-        audience: 'https://' + process.env.AUTH0_DOMAIN + '/api/v2/',
-        grant_type: 'client_credentials'
-    },
-    json: true
-};
-
 
 var getRequestOptions = function(resource, accessToken) {
     return {
@@ -90,7 +74,6 @@ var getRequestOptions = function(resource, accessToken) {
         json: true
     };
 };
-
 
 
 router.get('/', ensureLoggedIn, function(req, res, next) {
@@ -111,7 +94,7 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
 
                             // create empty array of rules per client
                             clients.forEach(function(client) {
-                                if (client.name !== 'API Explorer Client') {
+                                if (client.name !== 'All Applications') {
                                     rulesPerClient.push({
                                         client: client,
                                         rules: []
@@ -121,10 +104,9 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
 
 
                             rules.forEach(function(rule) {
-                                console.log(rule);
+
                                 // check for client name on which the rule is applicable
                                 addRuleToClientIfRuleAppliesToClientName(rule, rulesPerClient);
-                                
 
                                 // check for client name on which the rule is NOT applicable
                                 addRuleToOtherClientsIfRuleDoesNotApplyToClientName(rule, rulesPerClient);
@@ -136,7 +118,6 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
                                 addRuleToOtherClientsIfRuleDoesNotApplyToClientID(rule, rulesPerClient);
 
                             });
-                            console.log(rulesPerClient);
                             res.render('applist', {rulesPerClient: rulesPerClient});
 
                         });

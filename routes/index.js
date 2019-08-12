@@ -10,7 +10,7 @@ var env = {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'List of Rules Applied per Application', env: env });
+  res.render('index', { title: 'List of Rules applied per Application', env: env });
 });
 
 router.get('/login',
