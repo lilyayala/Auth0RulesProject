@@ -1,6 +1,6 @@
 
 # Auth0 Application that geneartes a list of exisiting rules that apply to each Application (client)
-!(https://github.com/lilyayala/Auth0RulesProject/blob/master/Docs/list.png?raw=true)
+![list](https://github.com/lilyayala/Auth0RulesProject/blob/master/Docs/list.png?raw=true)
 
 # Guide:
 
