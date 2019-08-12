@@ -1,5 +1,7 @@
 
 # Auth0 Application that geneartes a list of exisiting rules that apply to each Application (client)
+![login page](https://github.com/lilyayala/Auth0RulesProject/blob/master/Docs/loginphoto.PNG?raw=true)
+
 
 # Guide:
 
@@ -15,11 +17,11 @@ By following these steps, you should be able to access or create an Application 
 * Have a GitHub account.
 
 1. Create a new Auth0 application.(*NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.*)
-1. Download [(https://github.com/lilyayala/Auth0RulesProject)]
+1. Download (https://github.com/lilyayala/Auth0RulesProject)
 
 ## PART 1: Create an Application
 
-1. After login to your Auth0 Account Dashboard [https://manage.auth0.com/dashboard/], go to Applications section on the left menu and click create a new application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. 
+1. After login to your Auth0 Account [Dashboard](https://manage.auth0.com/dashboard/), go to Applications section on the left menu and click create a new application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. 
 1. Once you've created the application, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL.
 1. Create a Non Interactive application API Explorer Client. We will need this client to make calls to the Management API from our application code.
 
@@ -334,3 +336,5 @@ module.exports = router;
 
 
 If you have any questions about this guide, please contact Auth0 support.
+
+![list](https://github.com/lilyayala/Auth0RulesProject/blob/master/Docs/list.png?raw=true)
