@@ -23,7 +23,28 @@ By following these steps, you should be able to access or create an Application 
 
 1. After login to your Auth0 Account [Dashboard](https://manage.auth0.com/dashboard/), go to Applications section on the left menu and click create a new application, you should select a Regular Web Application using Node.js and change the name, e.g., ListOfRulesAndClients. 
 1. Once you've created the application, go to settings, and set http://localhost:3000/callback as the Allowed Callback URL.
-1. Create a Non Interactive application API Explorer Client. We will need this client to make calls to the Management API from our application code.
+1. Create a Non Interactive application API Explorer Client:
+* This non-interactive application allows obtaining the data for you to get a list of all your clients and rules from your application Management API.
+To create the non-interactive application go to the dashboard and when you create a new application, you select 'Machine to machine application' then it will prompt a message to select your Auth0 API management and the scopes. You can also follow these steps to create the non-interactive application: https://auth0.com/docs/api/management/v2/create-m2m-app
+* Once created, we can make calls through an application, but we will need a token. Since we will be making frequent calls we can generate this token dynamtically.
+
+In our sample application you can find this piece of code to generate an access token to the API in applist.js.
+
+```node.js
+var tokenRequestOptions = {
+    method: 'POST',
+    uri: 'https://' + process.env.AUTH0_DOMAIN + '/oauth/token',
+    header: 'content-type: application/json',
+    body: {
+        client_id: process.env.MANAGEMENT_API_CLIENT_ID,
+        client_secret: process.env.MANAGEMENT_API_CLIENT_SECRET,
+        audience: 'https://' + process.env.AUTH0_DOMAIN + '/api/v2/',
+        grant_type: 'client_credentials'
+    },
+    json: true
+};
+
+```
 
 
 ## PART 2: Auth0 configuration 
@@ -32,7 +53,8 @@ Create a Whitelist Rule or add this JS code if the rule already exists:
 
 
 ``` javascript
-    if (context.clientName === 'ListOfRulesApplication') {
+function (user, context, callback) {
+  if(context.clientName === 'ListOfRulesApplication') {
       var whitelist = [ 'youremail@example.com' ]; //authorized users
       var userHasAccess = whitelist.some(
         function (email) {
