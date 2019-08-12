@@ -26,7 +26,7 @@ By following these steps, you should be able to access or create an Application 
 1. Create a Non Interactive application API Explorer Client:
 * This non-interactive application allows obtaining the data for you to get a list of all your clients and rules from your application Management API.
 To create the non-interactive application go to the dashboard and when you create a new application, you select 'Machine to machine application' then it will prompt a message to select your Auth0 API management and the scopes. You can also follow these steps to create the non-interactive application: https://auth0.com/docs/api/management/v2/create-m2m-app
-* Once created, we can make calls through an application, but we will need a token. Since we will be making frequent calls we can generate this token dynamtically.
+* Once created, we can make calls through an application, but we will need a token to access the list. Since we will be making frequent calls we can generate this token dynamtically.
 
 In our sample application you can find this piece of code to generate an access token to the API in applist.js.
 
