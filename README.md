@@ -1,5 +1,4 @@
-
-# Auth0 Application that geneartes a list of exisiting rules that apply to each Application (client)
+# Auth0 Application that generates a list of existing rules that apply to each application (client)
 ![login page](https://github.com/lilyayala/Auth0RulesProject/blob/master/Docs/loginphoto.PNG?raw=true)
 
 
@@ -16,7 +15,7 @@ By following these steps, you should be able to access or create an Application 
 * Have an Auth0 Account.
 * Have a GitHub account.
 
-1. Create a new Auth0 application.(*NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.*)
+1. Create a new Auth0 application. (*NOTE: for this solution, I've used Node js. However, any other technology can be used depending on customer needs.*)
 1. Download (https://github.com/lilyayala/Auth0RulesProject)
 
 ## PART 1: Create an Application
@@ -26,9 +25,9 @@ By following these steps, you should be able to access or create an Application 
 1. Create a Non Interactive application API Explorer Client:
 * This non-interactive application allows obtaining the data for you to get a list of all your clients and rules from your application Management API.
 To create the non-interactive application go to the dashboard and when you create a new application, you select 'Machine to machine application' then it will prompt a message to select your Auth0 API management and the scopes. You can also follow these steps to create the non-interactive application: https://auth0.com/docs/api/management/v2/create-m2m-app
-* Once created, we can make calls through an application, but we will need a token to access the list. Since we will be making frequent calls we can generate this token dynamtically.
+* Once created, we can make calls through an application, but we will need a token to access the list. Since we will be making frequent calls, we can generate this token dynamically.
 
-In our sample application you can find this piece of code to generate an access token to the API in applist.js.
+In our sample application, you can find this piece of code to generate an access token to the API in applist.js.
 
 ```node.js
 var tokenRequestOptions = {
